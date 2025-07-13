@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.dev",
+  title: "Kyivstar.Tech",
+  description: "Kyivstar.Tech",
+  generator: "Kyivstar.Tech",
 };
 
 export default function RootLayout({
@@ -14,6 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" style={{ scrollBehavior: "smooth" }}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body>{children}</body>
     </html>
   );
