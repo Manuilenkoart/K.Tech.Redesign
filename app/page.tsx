@@ -11,15 +11,198 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Menu, X, UserCheck, Sparkles } from "lucide-react";
-import {
-  hiringSteps,
-  NavigationItems,
-  principles,
-  products,
-  stats,
-  whyChooseUs,
-} from "@/lib/costants";
 
+import {
+  Star,
+  TrendingUp,
+  Award,
+  FileText,
+  MessageSquare,
+  CheckCircle,
+  Heart,
+  Home,
+  Laptop,
+  DollarSign,
+  BookOpen,
+  HeartPulse,
+  Smile,
+  Phone,
+} from "lucide-react";
+const NavigationItems = {
+  products: { title: "Продукти", href: "products" },
+  howWorks: { title: "Як працюємо", href: "how-works" },
+  hiring: { title: "Кар`єра", href: "hiring" },
+  contacts: { title: "Контакти", href: "contacts" },
+};
+
+const principles = [
+  {
+    title: "Власна дизайн-система",
+    description:
+      "Для розробки продуктів використовується власна дизайн-система побудована на принципах Bosonic Design",
+    icon: "🎨",
+    color: "from-blue-500 to-cyan-500",
+    features: [
+      "Bosonic Design принципи",
+      "Консистентність UI",
+      "Швидка розробка",
+    ],
+  },
+  {
+    title: "Інженерні практики",
+    description:
+      "Команда розробки використовує інженерні практики, такі як CodeReview, Unit Testing, XP Practices",
+    icon: "⚙️",
+    color: "from-purple-500 to-pink-500",
+    features: ["Code Review", "Unit Testing", "XP Practices"],
+  },
+  {
+    title: "Agile методологія",
+    description:
+      "Кросфункціональні команди працюють за Agile, у рамках погоджених продуктових роадмапів",
+    icon: "🚀",
+    color: "from-green-500 to-emerald-500",
+    features: ["Scrum/Kanban", "Sprint Planning", "Product Roadmaps"],
+  },
+  {
+    title: "Контент-гайд",
+    description:
+      "У нас є власний контент-гайд, який спрощує роботу та допомагає створювати кращий користувацький досвід",
+    icon: "📝",
+    color: "from-orange-500 to-red-500",
+    features: ["UX Writing", "Tone of Voice", "Content Strategy"],
+  },
+];
+
+const stats = [
+  { value: "88%", label: "Middle та senior фахівців", icon: Star },
+  { value: "500+", label: "Працівників", icon: TrendingUp },
+  { value: "100%", label: "Agile", icon: Award },
+];
+
+const whyChooseUs = [
+  {
+    icon: Home,
+    title: "Гнучкий формат роботи",
+    description:
+      "Офіс чи ремоут — вирішувати вам: даємо можливість працювати будь-де, а робоче місце облаштуємо.",
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    icon: Laptop,
+    title: "Ремоут онбординг",
+    description:
+      "Ефективний та комфортний процес адаптації для нових співробітників, незалежно від їхнього місця розташування.",
+    color: "from-purple-500 to-pink-500",
+  },
+  {
+    icon: DollarSign,
+    title: "Перформанс бонуси",
+    description:
+      "Система річних чи квартальних бонусів для всіх працівників, що залежить від ролі та результатів.",
+    color: "from-green-500 to-emerald-500",
+  },
+  {
+    icon: BookOpen,
+    title: "Навчання та розвиток",
+    description:
+      "Безліч внутрішніх ресурсів, програм від партнерів та власна бібліотека для постійного навчання.",
+    color: "from-orange-500 to-red-500",
+  },
+  {
+    icon: HeartPulse,
+    title: "Страхування здоров’я і життя",
+    description:
+      "Повне медичне страхування та страхування життя для всіх наших працівників.",
+    color: "from-yellow-500 to-orange-500",
+  },
+  {
+    icon: Smile,
+    title: "Wellbeing-програма",
+    description:
+      "Комплексна програма підтримки добробуту та доступ до корпоративного психолога.",
+    color: "from-indigo-500 to-purple-500",
+  },
+  {
+    icon: Phone,
+    title: "Компенсація мобільного зв'язку",
+    description:
+      "Повна компенсація витрат на мобільний зв'язок Київстар для всіх співробітників.",
+    color: "from-teal-500 to-blue-500",
+  },
+];
+
+const hiringSteps = [
+  {
+    id: "h1",
+    step: "01",
+    title: "Знайомство",
+    description:
+      "Надішліть резюме, поділіться своїми очікуваннями, дізнайтеся у рекрутера більше про вакансію.",
+    date: "Крок 1",
+    icon: FileText,
+    color: "from-blue-500 to-cyan-500",
+    status: "completed",
+  },
+  {
+    id: "h2",
+    step: "02",
+    title: "Технічна співбесіда",
+    description:
+      "На відеозустрічі менеджер розповість про продукт, ваші завдання та команду.",
+    date: "Крок 2",
+    icon: MessageSquare,
+    color: "from-purple-500 to-pink-500",
+    status: "completed",
+  },
+  {
+    id: "h3",
+    step: "03",
+    title: "Тестове завдання",
+    description: "Необхідно виконати для деяких посад.",
+    date: "Крок 3",
+    icon: Heart,
+    color: "from-green-500 to-emerald-500",
+    status: "in-progress",
+  },
+  {
+    id: "h4",
+    step: "04",
+    title: "Пропозиція про співпрацю",
+    description: "Станьте частиною команди Kyivstar.Tech.",
+    date: "Крок 4",
+    icon: CheckCircle,
+    color: "from-orange-500 to-red-500",
+    status: "upcoming",
+  },
+];
+
+const products = [
+  {
+    title: "Мій Київстар",
+    description:
+      "Персональний помічник для управління послугами та рахунками з інтуїтивним інтерфейсом",
+    image: "/placeholder.svg?height=400&width=300",
+    category: "Mobile App",
+    gradient: "from-blue-500/20 to-purple-500/20",
+  },
+  {
+    title: "Novela",
+    description:
+      "Платформа для створення та читання інтерактивного контенту з ШІ-підтримкою",
+    image: "/placeholder.svg?height=300&width=500",
+    category: "Web Platform",
+    gradient: "from-green-500/20 to-teal-500/20",
+  },
+  {
+    title: "WebSoft Кабінет",
+    description:
+      "Корпоративне рішення для управління бізнес-процесами та аналітики",
+    image: "/placeholder.svg?height=300&width=500",
+    category: "Enterprise",
+    gradient: "from-orange-500/20 to-red-500/20",
+  },
+];
 export default function KyivstarTechRedesign() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -56,16 +239,16 @@ export default function KyivstarTechRedesign() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              {NavigationItems.map((item, index) => (
+              {Object.values(NavigationItems).map(({ title, href }, index) => (
                 <motion.a
-                  key={item}
-                  href="#"
+                  key={href}
+                  href={`#${href}`}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   className="text-slate-600 hover:text-slate-900 transition-colors duration-300 font-medium"
                 >
-                  {item}
+                  {title}
                 </motion.a>
               ))}
             </nav>
@@ -100,15 +283,17 @@ export default function KyivstarTechRedesign() {
           >
             <div className="container mx-auto px-6 py-6">
               <nav className="flex flex-col space-y-4">
-                {NavigationItems.map((item) => (
-                  <a
-                    key={item}
-                    href="#"
-                    className="text-slate-600 hover:text-slate-900 transition-colors duration-300 font-medium py-2"
-                  >
-                    {item}
-                  </a>
-                ))}
+                {Object.values(NavigationItems).map(
+                  ({ title, href }, index) => (
+                    <a
+                      key={href}
+                      href={`#${href}`}
+                      className="text-slate-600 hover:text-slate-900 transition-colors duration-300 font-medium py-2"
+                    >
+                      {title}
+                    </a>
+                  )
+                )}
               </nav>
             </div>
           </motion.div>
@@ -216,8 +401,80 @@ export default function KyivstarTechRedesign() {
         </div>
       </section>
 
+      {/* Products Section */}
+      <section className="py-20 px-6" id={NavigationItems['products'].href}>
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
+              Наші продукти
+            </h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              Інноваційні рішення, що змінюють спосіб взаємодії з технологіями
+            </p>
+          </motion.div>
+
+          <div className="space-y-12">
+            {products.map((product, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden bg-white/80 backdrop-blur-sm">
+                  <CardContent className="p-0">
+                    <div
+                      className={`bg-gradient-to-br ${product.gradient} p-12`}
+                    >
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6">
+                          <Badge
+                            variant="secondary"
+                            className="bg-white/20 text-slate-700 border-0"
+                          >
+                            {product.category}
+                          </Badge>
+                          <h3 className="text-3xl font-bold text-slate-800">
+                            {product.title}
+                          </h3>
+                          <p className="text-lg text-slate-600 leading-relaxed">
+                            {product.description}
+                          </p>
+                          <Button
+                            variant="outline"
+                            className="bg-white/50 border-white/30 text-slate-700 hover:bg-white/70 group"
+                          >
+                            Дізнатися більше
+                            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </div>
+                        <div className="relative">
+                          <div className="aspect-video bg-white/20 rounded-2xl backdrop-blur-sm border border-white/30 overflow-hidden">
+                            <img
+                              src={product.image || "/placeholder.svg"}
+                              alt={product.title}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* How We Work Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-slate-50 to-blue-50/50">
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-50 to-blue-50/50" id={NavigationItems['howWorks'].href}>
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -360,7 +617,7 @@ export default function KyivstarTechRedesign() {
       </section>
 
       {/* Hiring Process Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50/30">
+      <section className="py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50/30" id={NavigationItems['hiring'].href}>
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -507,80 +764,8 @@ export default function KyivstarTechRedesign() {
         </div>
       </section>
 
-      {/* Products Section */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
-              Наші продукти
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Інноваційні рішення, що змінюють спосіб взаємодії з технологіями
-            </p>
-          </motion.div>
-
-          <div className="space-y-12">
-            {products.map((product, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden bg-white/80 backdrop-blur-sm">
-                  <CardContent className="p-0">
-                    <div
-                      className={`bg-gradient-to-br ${product.gradient} p-12`}
-                    >
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div className="space-y-6">
-                          <Badge
-                            variant="secondary"
-                            className="bg-white/20 text-slate-700 border-0"
-                          >
-                            {product.category}
-                          </Badge>
-                          <h3 className="text-3xl font-bold text-slate-800">
-                            {product.title}
-                          </h3>
-                          <p className="text-lg text-slate-600 leading-relaxed">
-                            {product.description}
-                          </p>
-                          <Button
-                            variant="outline"
-                            className="bg-white/50 border-white/30 text-slate-700 hover:bg-white/70 group"
-                          >
-                            Дізнатися більше
-                            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                          </Button>
-                        </div>
-                        <div className="relative">
-                          <div className="aspect-video bg-white/20 rounded-2xl backdrop-blur-sm border border-white/30 overflow-hidden">
-                            <img
-                              src={product.image || "/placeholder.svg"}
-                              alt={product.title}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
-      <footer className="py-12 px-6 bg-slate-900 text-white">
+      <footer className="py-12 px-6 bg-slate-900 text-white" id={NavigationItems['contacts'].href}>
         <div className="container mx-auto max-w-6xl flex justify-between">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
