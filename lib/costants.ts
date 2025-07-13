@@ -26,7 +26,6 @@ export const principles = [
       "Bosonic Design принципи",
       "Консистентність UI",
       "Швидка розробка",
-      "Масштабованість",
     ],
   },
   {
@@ -39,7 +38,6 @@ export const principles = [
       "Code Review",
       "Unit Testing",
       "XP Practices",
-      "Continuous Integration",
     ],
   },
   {
@@ -52,7 +50,6 @@ export const principles = [
       "Scrum/Kanban",
       "Sprint Planning",
       "Product Roadmaps",
-      "Cross-functional Teams",
     ],
   },
   {
@@ -65,7 +62,6 @@ export const principles = [
       "UX Writing",
       "Tone of Voice",
       "Content Strategy",
-      "User Experience",
     ],
   },
 ];

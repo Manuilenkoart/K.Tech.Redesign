@@ -100,17 +100,15 @@ export default function KyivstarTechRedesign() {
           >
             <div className="container mx-auto px-6 py-6">
               <nav className="flex flex-col space-y-4">
-                {NavigationItems.map(
-                  (item) => (
-                    <a
-                      key={item}
-                      href="#"
-                      className="text-slate-600 hover:text-slate-900 transition-colors duration-300 font-medium py-2"
-                    >
-                      {item}
-                    </a>
-                  )
-                )}
+                {NavigationItems.map((item) => (
+                  <a
+                    key={item}
+                    href="#"
+                    className="text-slate-600 hover:text-slate-900 transition-colors duration-300 font-medium py-2"
+                  >
+                    {item}
+                  </a>
+                ))}
               </nav>
             </div>
           </motion.div>
@@ -243,26 +241,25 @@ export default function KyivstarTechRedesign() {
           </motion.div>
 
           {/* Main Principles Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {principles.map((principle, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="group"
               >
-                <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 h-full bg-white/80 backdrop-blur-sm overflow-hidden">
+                <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full bg-white/80 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-8 relative">
                     {/* Background Gradient */}
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${principle.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
+                      className={`absolute inset-0 bg-gradient-to-br ${principle.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
                     />
 
                     {/* Icon */}
-                    <div className="text-4xl mb-4 relative z-10 group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-4xl mb-4 relative z-10">
                       {principle.icon}
                     </div>
 
@@ -584,7 +581,7 @@ export default function KyivstarTechRedesign() {
 
       {/* Footer */}
       <footer className="py-12 px-6 bg-slate-900 text-white">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-6xl flex justify-between">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center">
@@ -592,6 +589,11 @@ export default function KyivstarTechRedesign() {
               </div>
               <span className="text-xl font-bold">Kyivstar.Tech</span>
             </div>
+          </div>
+
+          <div className="flex flex-col">
+            <p>З питань співпраці: sales@kyivstar.tech</p>
+            <p>Для медіазапитів: pr@kyivstar.tech</p>
           </div>
         </div>
       </footer>
