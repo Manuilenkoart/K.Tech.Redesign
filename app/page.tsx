@@ -203,6 +203,7 @@ const products = [
     gradient: "from-orange-500/20 to-red-500/20",
   },
 ];
+
 export default function KyivstarTechRedesign() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
@@ -283,17 +284,15 @@ export default function KyivstarTechRedesign() {
           >
             <div className="container mx-auto px-6 py-6">
               <nav className="flex flex-col space-y-4">
-                {Object.values(NavigationItems).map(
-                  ({ title, href }, index) => (
-                    <a
-                      key={href}
-                      href={`#${href}`}
-                      className="text-slate-600 hover:text-slate-900 transition-colors duration-300 font-medium py-2"
-                    >
-                      {title}
-                    </a>
-                  )
-                )}
+                {Object.values(NavigationItems).map(({ title, href }) => (
+                  <a
+                    key={href}
+                    href={`#${href}`}
+                    className="text-slate-600 hover:text-slate-900 transition-colors duration-300 font-medium py-2"
+                  >
+                    {title}
+                  </a>
+                ))}
               </nav>
             </div>
           </motion.div>
@@ -302,7 +301,6 @@ export default function KyivstarTechRedesign() {
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-6 relative overflow-hidden">
-        {/* Yellow Geometric Accent */}
         <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
           <motion.div
             initial={{ x: -100, opacity: 0 }}
@@ -402,7 +400,7 @@ export default function KyivstarTechRedesign() {
       </section>
 
       {/* Products Section */}
-      <section className="py-20 px-6" id={NavigationItems['products'].href}>
+      <section className="py-20 px-6" id={NavigationItems["products"].href}>
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -474,7 +472,10 @@ export default function KyivstarTechRedesign() {
       </section>
 
       {/* How We Work Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-slate-50 to-blue-50/50" id={NavigationItems['howWorks'].href}>
+      <section
+        className="py-20 px-6 bg-gradient-to-br from-slate-50 to-blue-50/50"
+        id={NavigationItems["howWorks"].href}
+      >
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -510,17 +511,14 @@ export default function KyivstarTechRedesign() {
               >
                 <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full bg-white/80 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-8 relative">
-                    {/* Background Gradient */}
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${principle.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}
                     />
 
-                    {/* Icon */}
                     <div className="text-4xl mb-4 relative z-10">
                       {principle.icon}
                     </div>
 
-                    {/* Content */}
                     <div className="space-y-4 relative z-10">
                       <h3 className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
                         {principle.title}
@@ -529,7 +527,6 @@ export default function KyivstarTechRedesign() {
                         {principle.description}
                       </p>
 
-                      {/* Features */}
                       <div className="flex flex-wrap gap-2 mt-4">
                         {principle.features.map((feature, featureIndex) => (
                           <Badge
@@ -587,19 +584,16 @@ export default function KyivstarTechRedesign() {
               >
                 <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 h-full bg-white/80 backdrop-blur-sm overflow-hidden">
                   <CardContent className="p-8 relative">
-                    {/* Background Gradient */}
                     <div
                       className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
                     />
 
-                    {/* Icon */}
                     <div
                       className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6 relative z-10 group-hover:scale-110 transition-transform duration-300`}
                     >
                       <feature.icon className="w-8 h-8 text-white" />
                     </div>
 
-                    {/* Content */}
                     <div className="space-y-4 relative z-10">
                       <h3 className="text-xl font-bold text-slate-800 group-hover:text-slate-900 transition-colors">
                         {feature.title}
@@ -617,7 +611,10 @@ export default function KyivstarTechRedesign() {
       </section>
 
       {/* Hiring Process Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50/30" id={NavigationItems['hiring'].href}>
+      <section
+        className="py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50/30"
+        id={NavigationItems["hiring"].href}
+      >
         <div className="container mx-auto max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -644,7 +641,6 @@ export default function KyivstarTechRedesign() {
             ref={hiringProcessRef}
             className="relative flex flex-col items-center"
           >
-            {/* Vertical Line */}
             <motion.div
               className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-slate-200 rounded-full"
               style={{
@@ -682,7 +678,6 @@ export default function KyivstarTechRedesign() {
                   viewport={{ once: true, amount: 0.3 }}
                   style={{ y: yOffset }}
                 >
-                  {/* Circle Indicator */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 z-10 w-8 h-8 rounded-full bg-white border-4 border-yellow-400 flex items-center justify-center">
                     <div
                       className={`w-4 h-4 rounded-full ${
@@ -701,24 +696,20 @@ export default function KyivstarTechRedesign() {
                     }`}
                   >
                     <CardContent className="p-8 relative">
-                      {/* Background Number */}
                       <div className="absolute top-4 right-4 text-6xl font-bold text-slate-100 select-none group-hover:text-slate-200 transition-colors">
                         {step.step}
                       </div>
 
-                      {/* Background Gradient */}
                       <div
                         className={`absolute inset-0 bg-gradient-to-br ${step.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
                       />
 
-                      {/* Icon */}
                       <div
                         className={`w-14 h-14 bg-gradient-to-br ${step.color} rounded-xl flex items-center justify-center mb-4 relative z-10`}
                       >
                         <step.icon className="w-7 h-7 text-white" />
                       </div>
 
-                      {/* Content */}
                       <div className="space-y-3 relative z-10">
                         <h3 className="text-xl font-bold text-slate-800">
                           {step.title}
@@ -755,7 +746,10 @@ export default function KyivstarTechRedesign() {
                   className="bg-white text-yellow-600 hover:bg-yellow-50 px-8 py-4 text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300 group"
                 >
                   <UserCheck className="mr-2 w-5 h-5" />
-                  Переглянути вакансії
+                  <a href="https://jobs.dou.ua/companies/kyivstar-tech/vacancies/">
+                    Переглянути вакансії
+                  </a>
+
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
@@ -765,7 +759,10 @@ export default function KyivstarTechRedesign() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-slate-900 text-white" id={NavigationItems['contacts'].href}>
+      <footer
+        className="py-12 px-6 bg-slate-900 text-white"
+        id={NavigationItems["contacts"].href}
+      >
         <div className="container mx-auto max-w-6xl flex justify-between">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">

@@ -3,8 +3,6 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Kyivstar.Tech",
-  description: "Kyivstar.Tech",
-  generator: "Kyivstar.Tech",
 };
 
 export default function RootLayout({
