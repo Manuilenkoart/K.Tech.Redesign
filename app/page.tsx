@@ -10,9 +10,12 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Menu, X, UserCheck, Sparkles } from "lucide-react";
 
 import {
+  ArrowRight,
+  Menu,
+  X,
+  UserCheck,
   Star,
   TrendingUp,
   Award,
@@ -228,7 +231,7 @@ export default function KyivstarTechRedesign() {
               className="flex items-center space-x-2"
             >
               <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-white" />
+                <Star className="w-4 h-4 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
                 <a href="#">Kyivstar.Tech</a>
@@ -743,7 +746,7 @@ export default function KyivstarTechRedesign() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-2 mb-4 md:mb-0">
               <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-white" />
+                <Star className="w-4 h-4 text-white" />
               </div>
               <span className="text-xl font-bold">Kyivstar.Tech</span>
             </div>
