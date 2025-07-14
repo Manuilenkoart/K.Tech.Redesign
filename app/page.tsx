@@ -179,27 +179,24 @@ const hiringSteps = [
 
 const products = [
   {
-    title: "Мій Київстар",
+    title: "Вебсайт Київстар",
     description:
-      "Персональний помічник для управління послугами та рахунками з інтуїтивним інтерфейсом",
-    image: "/placeholder.svg?height=400&width=300",
-    category: "Mobile App",
-    gradient: "from-blue-500/20 to-purple-500/20",
+      "Kyivstar.ua — офіційний сайт компанії, де понад 6 мільйонів користувачів щомісяця отримують актуальну інформацію про тарифи й послуги та дізнаються новини.",
+    image: "/web.jpg",
+    gradient: "from-blue-300/20 to-blue-500/20",
   },
   {
-    title: "Novela",
+    title: "Hoverla",
     description:
-      "Платформа для створення та читання інтерактивного контенту з ШІ-підтримкою",
-    image: "/placeholder.svg?height=300&width=500",
-    category: "Web Platform",
+      "Цифровий каталог, у якому живуть усі продуктові сутності компанії. Починаючи від текстових описів, які клієнти бачать на сайті та в додатку, закінчуючи тарифними пропозиціями, що містять складну бізнес-логіку.",
+    image: "/hoverla.jpg",
     gradient: "from-green-500/20 to-teal-500/20",
   },
   {
-    title: "WebSoft Кабінет",
+    title: "Київстар Відкритий Телеком — маркетплейс API-сервісів",
     description:
-      "Корпоративне рішення для управління бізнес-процесами та аналітики",
-    image: "/placeholder.svg?height=300&width=500",
-    category: "Enterprise",
+      "Платформа дає доступ до продуктів і статистичних даних оператора та партнерських сервісів через API. Вони допомагають оцінити ризики під час кредитування, збагатити знання про клієнта, підвищити ефективність відділів продажу й маркетингових кампаній та попередити шахрайство.",
+    image: "/api.jpg",
     gradient: "from-orange-500/20 to-red-500/20",
   },
 ];
@@ -432,32 +429,19 @@ export default function KyivstarTechRedesign() {
                     >
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                         <div className="space-y-6">
-                          <Badge
-                            variant="secondary"
-                            className="bg-white/20 text-slate-700 border-0"
-                          >
-                            {product.category}
-                          </Badge>
                           <h3 className="text-3xl font-bold text-slate-800">
                             {product.title}
                           </h3>
                           <p className="text-lg text-slate-600 leading-relaxed">
                             {product.description}
                           </p>
-                          <Button
-                            variant="outline"
-                            className="bg-white/50 border-white/30 text-slate-700 hover:bg-white/70 group"
-                          >
-                            Дізнатися більше
-                            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                          </Button>
                         </div>
                         <div className="relative">
                           <div className="aspect-video bg-white/20 rounded-2xl backdrop-blur-sm border border-white/30 overflow-hidden">
                             <img
-                              src={product.image || "/placeholder.svg"}
+                              src={product.image}
                               alt={product.title}
-                              className="w-full h-full object-cover"
+                              className="w-full h-full object-fill"
                             />
                           </div>
                         </div>
