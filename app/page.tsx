@@ -142,7 +142,7 @@ const hiringSteps = [
     date: "Крок 1",
     icon: FileText,
     color: "from-blue-500 to-cyan-500",
-    status: "completed",
+    status: "in-progress",
   },
   {
     id: "h2",
@@ -153,7 +153,7 @@ const hiringSteps = [
     date: "Крок 2",
     icon: MessageSquare,
     color: "from-purple-500 to-pink-500",
-    status: "completed",
+    status: "in-progress",
   },
   {
     id: "h3",
@@ -173,7 +173,7 @@ const hiringSteps = [
     date: "Крок 4",
     icon: CheckCircle,
     color: "from-orange-500 to-red-500",
-    status: "upcoming",
+    status: "in-progress",
   },
 ];
 
@@ -234,7 +234,7 @@ export default function KyivstarTechRedesign() {
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
-                Kyivstar.Tech
+                <a href="#">Kyivstar.Tech</a>
               </span>
             </motion.div>
 
@@ -300,7 +300,7 @@ export default function KyivstarTechRedesign() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6 relative overflow-hidden">
+      <section className="pt-32 pb-20 px-6 relative overflow-hidden" id="#">
         <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
           <motion.div
             initial={{ x: -100, opacity: 0 }}
@@ -679,15 +679,7 @@ export default function KyivstarTechRedesign() {
                   style={{ y: yOffset }}
                 >
                   <div className="absolute left-1/2 transform -translate-x-1/2 z-10 w-8 h-8 rounded-full bg-white border-4 border-yellow-400 flex items-center justify-center">
-                    <div
-                      className={`w-4 h-4 rounded-full ${
-                        step.status === "completed"
-                          ? "bg-green-500"
-                          : step.status === "in-progress"
-                          ? "bg-yellow-500"
-                          : "bg-slate-400"
-                      }`}
-                    />
+                    <div className={`w-4 h-4 rounded-full "bg-yellow-500"`} />
                   </div>
 
                   <Card
